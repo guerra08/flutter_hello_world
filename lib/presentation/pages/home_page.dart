@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hello_world/data/coffee_repository.dart';
 import 'package:flutter_hello_world/domain/model/coffee.dart';
 import 'package:flutter_hello_world/di/get_it_setup.dart';
-import 'package:flutter_hello_world/presentation/components/add_fab.dart';
-import 'package:flutter_hello_world/presentation/components/coffee_list.dart';
+import 'package:flutter_hello_world/presentation/widgets/add_fab.dart';
+import 'package:flutter_hello_world/presentation/widgets/coffee_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hello_world/domain/model/coffee.dart';
-import 'package:flutter_hello_world/presentation/components/coffee_dialog.dart';
+import 'package:flutter_hello_world/presentation/widgets/coffee_dialog.dart';
 
 class CoffeeCard extends StatelessWidget {
   final Coffee coffee;
