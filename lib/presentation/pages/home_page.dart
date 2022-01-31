@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hello_world/data/http_coffee_repository.dart';
+import 'package:flutter_hello_world/data/coffee_repository.dart';
 import 'package:flutter_hello_world/domain/model/coffee.dart';
+import 'package:flutter_hello_world/di/get_it_setup.dart';
 import 'package:flutter_hello_world/presentation/components/add_fab.dart';
 import 'package:flutter_hello_world/presentation/components/coffee_list.dart';
 
@@ -13,8 +14,6 @@ class HomePage extends StatefulWidget {
 
 /// Home Page that displays a list of coffees
 class _HomePageState extends State<HomePage> {
-  HttpCoffeeRepository repository = HttpCoffeeRepository();
-
   List<Coffee> _coffees = [];
   bool _isLoading = false;
 
@@ -54,7 +53,7 @@ class _HomePageState extends State<HomePage> {
         setState(() {
           _isLoading = true;
         });
-        Coffee coffee = await repository.getCoffee();
+        Coffee coffee = await getIt.get<CoffeeRepository>().getCoffee();
         setState(() {
           _coffees = [..._coffees, coffee];
           _isLoading = false;

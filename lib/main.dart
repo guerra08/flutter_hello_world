@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hello_world/di/get_it_setup.dart';
 import 'package:flutter_hello_world/presentation/pages/home_page.dart';
 
 void main() {
+  setupGetIt();
   runApp(const MyApp());
 }
 
