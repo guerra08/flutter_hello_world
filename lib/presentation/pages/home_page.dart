@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hello_world/data/http_coffee_repository.dart';
 import 'package:flutter_hello_world/domain/model/coffee.dart';
+import 'package:flutter_hello_world/presentation/components/add_fab.dart';
 import 'package:flutter_hello_world/presentation/components/coffee_list.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,19 +35,16 @@ class _HomePageState extends State<HomePage> {
                     coffees: _coffees,
                   ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () async {
-          setState(() {
-            _isLoading = true;
-          });
-          Coffee coffee = await repository.getCoffee();
-          setState(() {
-            _coffees = [..._coffees, coffee];
-            _isLoading = false;
-          });
-        },
-      ),
+      floatingActionButton: AddFab(onPressed: () async {
+        setState(() {
+          _isLoading = true;
+        });
+        Coffee coffee = await repository.getCoffee();
+        setState(() {
+          _coffees = [..._coffees, coffee];
+          _isLoading = false;
+        });
+      }),
     );
   }
 }
