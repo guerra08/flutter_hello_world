@@ -18,11 +18,27 @@ class _HomePageState extends State<HomePage> {
   List<Coffee> _coffees = [];
   bool _isLoading = false;
 
+  removeCoffeeFromList(Coffee coffee) {
+    setState(() {
+      _coffees.remove(coffee);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Coffees'),
+        actions: [
+          if (_coffees.isNotEmpty)
+            IconButton(
+                onPressed: () {
+                  setState(() {
+                    _coffees = [];
+                  });
+                },
+                icon: const Icon(Icons.clear_all, color: Colors.white))
+        ],
       ),
       body: Center(
         child: _isLoading
@@ -31,6 +47,7 @@ class _HomePageState extends State<HomePage> {
                 ? const Text("Press the + button to get a random coffee!")
                 : CoffeeList(
                     coffees: _coffees,
+                    onDismissCoffee: removeCoffeeFromList,
                   ),
       ),
       floatingActionButton: AddFab(onPressed: () async {
