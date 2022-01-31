@@ -5,9 +5,7 @@ import 'package:flutter_hello_world/presentation/components/add_fab.dart';
 import 'package:flutter_hello_world/presentation/components/coffee_list.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -24,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Nice Coffees!'),
+        title: const Text('Coffees'),
       ),
       body: Center(
         child: _isLoading
