@@ -54,7 +54,7 @@ class Coffee {
     return Coffee(
       id: map['id']?.toInt() ?? 0,
       uid: map['uid'] ?? '',
-      blendName: map['blendName'] ?? '',
+      blendName: map['blend_name'] ?? '',
       origin: map['origin'] ?? '',
       variety: map['variety'] ?? '',
       notes: map['notes'] ?? '',
