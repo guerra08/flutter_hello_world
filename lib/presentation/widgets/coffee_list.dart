@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_hello_world/domain/model/coffee.dart';
 import 'package:flutter_hello_world/presentation/widgets/coffee_card.dart';
 
@@ -7,7 +8,11 @@ class CoffeeList extends StatelessWidget {
   final List<Coffee> coffees;
   final Function onDismissCoffee;
 
-  const CoffeeList({this.coffees = const [], required this.onDismissCoffee});
+  const CoffeeList({
+    Key? key,
+    this.coffees = const [],
+    required this.onDismissCoffee,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

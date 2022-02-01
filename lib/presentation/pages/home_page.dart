@@ -23,6 +23,12 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  cleanCoffeeList() {
+    setState(() {
+      _coffees = [];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,11 +37,7 @@ class _HomePageState extends State<HomePage> {
         actions: [
           if (_coffees.isNotEmpty)
             IconButton(
-                onPressed: () {
-                  setState(() {
-                    _coffees = [];
-                  });
-                },
+                onPressed: cleanCoffeeList,
                 icon: const Icon(Icons.clear_all, color: Colors.white))
         ],
       ),
