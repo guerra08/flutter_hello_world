@@ -14,7 +14,10 @@ class CoffeeCard extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
-              leading: const Icon(Icons.coffee),
+              leading: const SizedBox(
+                height: double.infinity,
+                child: Icon(Icons.coffee),
+              ),
               title: Text(coffee.blendName),
               subtitle: Text(coffee.origin),
             )
